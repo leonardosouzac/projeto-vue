@@ -1,17 +1,16 @@
 <template>
 <info />
-<form />
+<Forms />
 </template>
 
 <script>
     import Info from './Info.vue'
-    import Form from './Form.vue'
-
+    import Forms from './Forms.vue'
     export default{
         name: "Pessoa",
         components:{
             Info,
-            Form
+            Forms
         }
     }
 </script>
