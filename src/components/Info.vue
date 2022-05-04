@@ -36,12 +36,14 @@ export default {
   components: {
     Picture,
   },
+  props:{
+    email: String
+  },
   data() {
     return {
 
       esta_trabalhando: false,
       mostrar_email: false,
-      email: "praiajew@vkontakte.com",
       meu_link: "https://ifood.com.br",
       textoBotao: "Mostrar e-mail",
       backend_tech: ["Go", "PHP", "Rust", "Python"],

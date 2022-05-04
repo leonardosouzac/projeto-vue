@@ -3,6 +3,7 @@
     <li><a href="#">Home</a></li>
     <li><a href="#">Projetos</a></li>
     <li><a href="#">Contato</a></li>
+    <li v-if="esta_logado"><a href="#">Meu perfil</a></li>
   </ul>
 </template>
 
@@ -10,6 +11,7 @@
 <script>
 export default {
   name: "Header",
+  props: ["esta_logado"],
 };
 </script>
 
@@ -21,16 +23,16 @@ ul {
 }
 
 li {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
-a{
-    color: #DDD;
-    text-decoration: none;
-    transition: .5s;
+a {
+  color: #ddd;
+  text-decoration: none;
+  transition: 0.5s;
 }
 
-a:hover{
-    color:turquoise;
+a:hover {
+  color: turquoise;
 }
 </style>

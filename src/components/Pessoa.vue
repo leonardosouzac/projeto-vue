@@ -1,5 +1,5 @@
 <template>
-<info />
+<info :email="email"/>
 <Forms />
 </template>
 
@@ -11,6 +11,12 @@
         components:{
             Info,
             Forms
+        },
+        data(){
+            return {
+                nome: 'Leonardo',
+                email: 'joao@email.com'
+            }
         }
     }
 </script>
