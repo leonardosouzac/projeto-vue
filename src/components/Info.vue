@@ -3,12 +3,19 @@
     <Picture />
     <p v-if="esta_trabalhando">Estou trabalhando no momento.</p>
     <p v-else>Estou em busca de novas oportunidades.</p>
-    <p>Utilizo as seguintes tecnologias:</p>
+    <p>Tecnologias back-end:</p>
     <ul>
-      <li>Go</li>
-      <li>Rust</li>
-      <li>Vue.js</li>
+      <li v-for="(technology, index) in backend_tech" v-bind:key="index">
+        {{ technology }}
+      </li>
     </ul>
+    <p>Tecnologias front-end:</p>
+    <ul>
+      <li v-for="technology in frontend_tech" :key="technology.id">
+        {{ technology.language }}
+      </li>
+    </ul>
+
     <div>
       <button @click="showEmail">{{ textoBotao }}</button>
     </div>
@@ -31,21 +38,32 @@ export default {
   },
   data() {
     return {
+
       esta_trabalhando: false,
       mostrar_email: false,
       email: "praiajew@vkontakte.com",
       meu_link: "https://ifood.com.br",
-      textoBotao: "Mostrar e-mail"
+      textoBotao: "Mostrar e-mail",
+      backend_tech: ["Go", "PHP", "Rust", "Python"],
+
+      frontend_tech: [
+        { id: 1, language: "HTML" },
+        { id: 2, language: "CSS" },
+        { id: 3, language: "Vue" },
+        { id: 4, language: "Quasar" },
+      ],
+      
     };
   },
   methods: {
     showEmail() {
-        this.mostrar_email = !this.mostrar_email
-        if(!this.mostrar_email){
-            this.textoBotao ="Mostrar e-mail"
-        } else {
-            this.textoBotao ="Esconder e-mail"
-        }
+      this.mostrar_email = !this.mostrar_email;
+
+      if (!this.mostrar_email) {
+        this.textoBotao = "Mostrar e-mail";
+      } else {
+        this.textoBotao = "Esconder e-mail";
+      }
     },
   },
 };
